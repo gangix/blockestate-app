@@ -1,0 +1,128 @@
+/* General container styling */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form layout and spacing */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between each form element */
+}
+
+/* Label styling */
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;  /* Adjust margin */
+  transition: border-color 0.3s ease;
+  width: 100%;  /* Ensure inputs take full width */
+}
+
+/* Focus state for input fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: #4CAF50; /* Green focus color */
+  outline: none;
+}
+
+/* Error message styling */
+div {
+  color: #e74c3c;
+  font-size: 0.9rem;
+}
+
+/* Button styling */
+button {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Connect / Disconnect Button */
+button[type="button"] {
+  background-color: #007bff;
+  width: auto;
+  margin: 10px auto;
+}
+
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+/* Wallet connection status and buttons */
+div.wallet-connection {
+  text-align: center;
+  margin-top: 20px;
+}
+
+div.wallet-connection p {
+  font-size: 1rem;
+  color: #333;
+}
+
+div.wallet-connection button {
+  font-size: 1rem;
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+div.wallet-connection button:hover {
+  background-color: #0056b3;
+}

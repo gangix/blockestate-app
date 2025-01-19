@@ -1,0 +1,68 @@
+<div class="container">
+  <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+    <!-- Payer Full Name -->
+    <div>
+      <label for="payerName">Payer Full Name:</label>
+      <input id="payerName" formControlName="payerName" type="text" />
+      <div *ngIf="transferForm.get('payerName')?.invalid && transferForm.get('payerName')?.touched">
+        Payer name is required.
+      </div>
+    </div>
+
+    <!-- Payer Email -->
+    <div>
+      <label for="payerEmail">Payer Email:</label>
+      <input id="payerEmail" formControlName="payerEmail" type="email" />
+      <div *ngIf="transferForm.get('payerEmail')?.invalid && transferForm.get('payerEmail')?.touched">
+        Enter a valid email address.
+      </div>
+    </div>
+
+    <!-- Payee Full Name -->
+    <div>
+      <label for="payeeName">Payee Full Name:</label>
+      <input id="payeeName" formControlName="payeeName" type="text" />
+      <div *ngIf="transferForm.get('payeeName')?.invalid && transferForm.get('payeeName')?.touched">
+        Payee name is required.
+      </div>
+    </div>
+
+    <!-- Payee Email -->
+    <div>
+      <label for="payeeEmail">Payee Email:</label>
+      <input id="payeeEmail" formControlName="payeeEmail" type="email" />
+      <div *ngIf="transferForm.get('payeeEmail')?.invalid && transferForm.get('payeeEmail')?.touched">
+        Enter a valid email address.
+      </div>
+    </div>
+
+    <!-- Payee Ethereum Wallet Address -->
+    <div>
+      <label for="payeeEthereumAddress">Payee Ethereum Wallet Address:</label>
+      <input id="payeeEthereumAddress" formControlName="payeeEthereumAddress" type="text" />
+      <div *ngIf="transferForm.get('payeeEthereumAddress')?.invalid && transferForm.get('payeeEthereumAddress')?.touched">
+        Enter a valid Ethereum wallet address.
+      </div>
+    </div>
+
+    <!-- Transaction Amount (ETH) -->
+    <div>
+      <label for="ethAmount">ETH Amount:</label>
+      <input id="ethAmount" formControlName="ethAmount" type="number" step="0.0001" />
+      <div *ngIf="transferForm.get('ethAmount')?.invalid && transferForm.get('ethAmount')?.touched">
+        Enter a valid ETH amount.
+      </div>
+    </div>
+
+    <div *ngIf="!walletConnected">
+      <button type="button" (click)="connectMetamask()">Connect Ethereum Wallet</button>
+    </div>
+    <div *ngIf="walletConnected">
+      <p>Connected Wallet: {{ ethereumAddress }}</p>
+      <button type="button" (click)="disconnectMetamask()">Disconnect Wallet</button>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="transferForm.invalid || !walletConnected || isSubmitting">Submit</button>
+  </form>
+</div>
