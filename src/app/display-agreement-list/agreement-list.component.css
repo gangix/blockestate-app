@@ -1,0 +1,24 @@
+.agreement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.agreement-table th, .agreement-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.agreement-table th {
+  background-color: #f4f4f4;
+}
+
+.agreement-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.agreement-table tr:hover {
+  background-color: #f1f1f1;
+}

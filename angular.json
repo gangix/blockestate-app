@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/buffer/index.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "74b5cef0-1e24-4c15-ab6d-ba15be7c1f13"
   }
 }
